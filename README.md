@@ -28,10 +28,22 @@ http-server
 ## JavaScript concepts
 1. Explain what hoisting is. Provide your answer below.
 
-  **Student answer: **
+  Hoisting is the behavior within JavaScript of bringing all variable declarations and function declarations to the top of their scope.
 1. What is a callback? Why do we use them in JavaScript? Provide your answer, and code a simple example below.
 
-  **Student answer: **
+  A callback is a reference to a function that can be passed in as an argument to another function that can be executed later in the code.  A simple application of this in javaScript would be for a math function
+  ```
+  function calling(num, howdy){
+    var bigNum = num * 123456;
+    howdy(bigNum);
+  }
+
+  function ouch(snap) {
+    snap * 12345;
+  }
+
+  calling(455, ouch);
+  ```
 
 ## Functions and operators
 
@@ -51,7 +63,7 @@ http-server
 ## IIFE
 
 1. I included two other script files in the HTML, `IIFE.js` and `AugmentedIIFE.js` that you will use for these tasks.
-1. In the file named `IIFE.js`. Write an IIFE that defines a global variable named **FruitMaker**. It should contain a private array holding the following strings: "apples", "bananas", "cherries", "huckleberries". 
+1. In the file named `IIFE.js`. Write an IIFE that defines a global variable named **FruitMaker**. It should contain a private array holding the following strings: "apples", "bananas", "cherries", "huckleberries".
 1. In the file named `AugmentedIIFE.js`, augment **FruitMaker** with a function named `slices()` that accepts two arguments: the name of the fruit, and the number of slices to make. It should return an array containing the name of the fruit duplicated how ever many slices was requested.
 
   For example: `slices("apples", 2)` should return `["apples", "apples"]`
@@ -60,19 +72,25 @@ http-server
 
 1. Write a function named `getAnimals` that uses the jQuery `ajax` method to retrieve the `data/animals.json` file. When you execute the functions, it should just log *just the array* of animals to the console when the async is complete. Make sure you provide a prompt of "animals" when logging the array.
 1. What are the four HTTP verbs that you can use in an XHR that correspond to the CRUD actions (create, read, update, delete)?
-  **Student answer:**
+  POST, GET, PUT, DELETE
 
 1. Why did we use Promises when dealing with asynchronous XHR calls?
-  **Student answer:**
+  To allow the code to continue functioning by providing a failure notice if the data is not retrieved instead of breaking all of our code.  Promises also provide a clear view of what functions the code is executing and in what order.
+
 
 1. Provide a simple example of the syntax for handling a Promise.
-  **Student answer:**
+  ```
+  authors.getAuthors()
+    .then(function(data){
+      var data = data
+    });
+  ```
 
 ## Scope and this
 
 What gets logged to the console when the following code executes? Explain why.
 
-**Student answer: **
+The answer is 42 because `this` is defined at the scope of the callsite of `steve()` regardless of whichever functions are referenced within `steve()`
 
 ```
 var answer = "42";

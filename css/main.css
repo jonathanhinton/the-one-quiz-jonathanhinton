@@ -1,0 +1,55 @@
+/* 1. Write a selector that select only the first of the sibling li elements. Make the text for that item bold, and underlined. */
+li:first-of-type {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* 2. Make all li elements behave as inline elements. */
+
+li {
+  display: inline;
+}
+
+/* 3. Only the odd section elements should have a border. */
+
+section:nth-of-type(2n+1) {
+  border: 5px solid green;
+}
+
+/* 4. Only the even li elements should have a lime background. */
+
+li:nth-of-type(2n+0) {
+  background-color: lime;
+}
+
+/* 5. Only the first aside element in the 2nd section should have blue font color. */
+
+aside:first-of-type {
+  color: blue;
+}
+
+/* 6. There are three div elements with instructions inside them about which side of the screen they should be displayed on. Follow those instructions. */
+
+#leftDiv {
+  float: left;
+}
+
+#rightDiv {
+  float: right;
+}
+
+#bottomDiv {
+  clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+
+
