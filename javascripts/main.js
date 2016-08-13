@@ -59,10 +59,22 @@ $("#jquery_output").html("This content generated with jQuery");
   console.log("longPlanets", longPlanets);
 
 
+// 1. Write a function named `getAnimals` that uses the jQuery `ajax` method to retrieve the `data/animals.json` file. When you execute the functions, it should just log *just the array* of animals to the console when the async is complete. Make sure you provide a prompt of "animals" when logging the array.
 
+function getAnimals(){
+  $.ajax({
+      url : "../data/animals.json"
+    }).done(function(data){
+      var animalArray = data.animals;
+      var emptyAnimal = [];
+      for (i = 0; i < animalArray.length; i++){
+        emptyAnimal.push(animalArray[i].type);
+      }
+      console.log("animals", emptyAnimal);
+    });
+};
 
-
-
+getAnimals();
 
 
 
